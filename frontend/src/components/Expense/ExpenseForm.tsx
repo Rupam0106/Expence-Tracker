@@ -33,11 +33,12 @@ const ExpenseForm = ({ onSubmit }: Props) => {
 
   return (
     <>
-      <h1 className="flex justify-center rounded-full text-3xl font-bolt bg-slate-600 text-white p-7">
+      <h1 className="flex justify-center rounded-full text-3xl font-bolt p-7 ">
         Add Your Expenses Here...
       </h1>
       <div className="container flex justify-center p-5">
-        <form className="bg-[#048191] rounded-lg p-6"
+        <form
+          className="bg-[#048191] rounded-lg p-6"
           onSubmit={handleSubmit((data) => {
             onSubmit(data);
             reset();
