@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import categories from "../categories";
+import categories from "./categories";
 
 const schema = z.object({
   description: z
@@ -23,7 +23,7 @@ interface Props {
   onSubmit: (data: ExpenseFormData) => void;
 }
 
-const ExpenseForm = ({ onSubmit }: Props) => {
+const Login = ({ onSubmit }: Props) => {
   const {
     register,
     handleSubmit,
@@ -33,8 +33,8 @@ const ExpenseForm = ({ onSubmit }: Props) => {
 
   return (
     <div
-      className="container d-flex justify-content-center m-5 "
-      style={{ background: "linear-gradient(#e66465, #9198e5);" }}
+      className="container flex justify-content-center m-5 "
+      style={{ backgroundColor: "linear-gradient(#e66465, #9198e5);" }}
     >
       <form
         onSubmit={handleSubmit((data) => {
@@ -97,4 +97,4 @@ const ExpenseForm = ({ onSubmit }: Props) => {
   );
 };
 
-export default ExpenseForm;
+export default Login;
