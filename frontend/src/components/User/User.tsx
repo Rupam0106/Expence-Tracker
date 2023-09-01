@@ -9,13 +9,19 @@ const User = () => {
     });
   }, []);
 
-  const handleClick = (id: any) => {
+  // const addUser = () => {
+  //   const newUser= { id: 0, title: "Iphone 16" };
+  //   // setData([newUser, ...data]);
+  // };
+
+  const handleDelete = (id: any) => {
     const result = data.filter((res: any) => res.id !== id);
     setData(result);
   };
 
   return (
     <div>
+      <button className="p-2 bg-red-500 text-white rounded-md m-1">Add</button>
       <div className="w-full overflow-x-auto">
         <table className="min-w-full border divide-y">
           <thead className="bg-gray-100">
@@ -34,9 +40,16 @@ const User = () => {
                 <td className="py-3 px-6 whitespace-nowrap">{title}</td>
                 <td className="py-3 px-6 whitespace-nowrap">{price}</td>
                 <td className="py-3 px-6 whitespace-nowrap">{rating}</td>
+
                 <button
-                  className="p-2 bg-red-500 text-white rounded-md"
-                  onClick={() => handleClick(id)}
+                  className="p-2 bg-green-500 text-white rounded-md m-1"
+                  onClick={() => handleDelete(id)}
+                >
+                  Update
+                </button>
+                <button
+                  className="p-2 bg-red-500 text-white rounded-md mt-1"
+                  onClick={() => handleDelete(id)}
                 >
                   Delete
                 </button>
